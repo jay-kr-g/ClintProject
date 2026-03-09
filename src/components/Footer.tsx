@@ -3,13 +3,6 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <footer id="contact" className="footer">
-      <div className="footer-top">
-        <div className="container footer-contact-bar">
-          <div className="footer-label">(CONNECT)</div>
-          <div className="footer-email">HI@ANTONPHOTO.COM</div>
-          <div className="footer-lang-icon">🌐</div>
-        </div>
-      </div>
       <div className="footer-main">
         <div className="container footer-grid">
           <div className="footer-brand">

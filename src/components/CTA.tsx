@@ -5,14 +5,14 @@ const CTA: React.FC = () => {
     <section className="cta" style={{ backgroundImage: "url('/assets/cta_bg.png')" }}>
       <div className="cta-overlay"></div>
       <div className="cta-content">
-        <h2>LET'S CAPTURE SOMETHING REAL.</h2>
-        <p>AVAILABILITY LIMITED - BOOKING MARCH 2025</p>
-        <a href="#" className="cta-btn">KNOW MORE</a>
+        <h2 className="cta-title">LET'S CAPTURE SOMETHING REAL.</h2>
+        <p className="cta-subtitle">[ AVAILABILITY IS LIMITED — SECURE YOUR DATE NOW. ]</p>
+        <a href="#" className="cta-btn">BOOK A SESSION</a>
       </div>
       <style>{`
         .cta {
           position: relative;
-          height: 80vh;
+          height: 100vh;
           background-size: cover;
           background-position: center;
           display: flex;
@@ -20,6 +20,7 @@ const CTA: React.FC = () => {
           justify-content: center;
           text-align: center;
           color: var(--pure-white);
+          overflow: hidden;
         }
         .cta-overlay {
           position: absolute;
@@ -27,32 +28,46 @@ const CTA: React.FC = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(0,0,0,0.4);
-          backdrop-filter: blur(5px);
+          background: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(8px);
         }
         .cta-content {
           position: relative;
           z-index: 1;
+          width: 90%;
+          max-width: 1000px;
         }
-        .cta-content h2 {
-          font-size: clamp(30px, 6vw, 60px);
-          margin-bottom: 20px;
+        .cta-title {
+          font-size: clamp(40px, 8vw, 100px);
+          line-height: 1;
+          margin-bottom: 30px;
+          font-weight: 800;
+          letter-spacing: -2px;
         }
-        .cta-content p {
-          font-size: 14px;
+        .cta-subtitle {
+          font-size: clamp(10px, 2vw, 14px);
           letter-spacing: 2px;
-          margin-bottom: 40px;
+          margin-bottom: 50px;
+          font-weight: 600;
+          opacity: 0.8;
+          text-transform: uppercase;
         }
         .cta-btn {
           display: inline-block;
-          padding: 15px 40px;
-          border: 1px solid var(--pure-white);
+          padding: 18px 45px;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 100px;
           font-weight: 700;
+          font-size: 14px;
+          text-transform: uppercase;
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(5px);
           transition: var(--transition-smooth);
         }
         .cta-btn:hover {
           background-color: var(--pure-white);
           color: var(--pitch-black);
+          transform: scale(1.05);
         }
       `}</style>
     </section>

@@ -7,6 +7,7 @@ import FeaturedWorks from './components/FeaturedWorks';
 import Stories from './components/Stories';
 import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
+import ContactBar from './components/ContactBar';
 import Footer from './components/Footer';
 import { useStore } from './store/useStore';
 
@@ -27,7 +28,7 @@ const App: React.FC = () => {
       });
     }, observerOptions);
 
-    const elements = document.querySelectorAll('.reveal-on-scroll, .hero-img-card, .story-card');
+    const elements = document.querySelectorAll('.reveal-on-scroll, .hero-img-card, .story-card, .cta, .contact-bar');
     elements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
@@ -44,6 +45,7 @@ const App: React.FC = () => {
         <Stories />
         <Testimonials />
         <CTA />
+        <ContactBar />
       </main>
       <Footer />
       <style>{`
