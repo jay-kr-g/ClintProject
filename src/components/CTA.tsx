@@ -12,7 +12,8 @@ const CTA: React.FC = () => {
       <style>{`
         .cta {
           position: relative;
-          height: 100vh;
+          height: 60vh;
+          min-height: 500px;
           background-size: cover;
           background-position: center;
           display: flex;
