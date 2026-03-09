@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -11,12 +12,12 @@ const Footer: React.FC = () => {
           </div>
           <div className="footer-nav">
              <h4>FOLLOW</h4>
-             <ul>
-               <li><a href="#">TWITTER</a></li>
-               <li><a href="#">INSTAGRAM</a></li>
-               <li><a href="#">FACEBOOK</a></li>
-               <li><a href="#">DRIBBBLE</a></li>
-               <li><a href="#">BEHANCE</a></li>
+             <ul className="social-links">
+               <li><a href="#">TWITTER <ArrowUpRight className="link-icon" size={14} /></a></li>
+               <li><a href="#">INSTAGRAM <ArrowUpRight className="link-icon" size={14} /></a></li>
+               <li><a href="#">FACEBOOK <ArrowUpRight className="link-icon" size={14} /></a></li>
+               <li><a href="#">DRIBBBLE <ArrowUpRight className="link-icon" size={14} /></a></li>
+               <li><a href="#">BEHANCE <ArrowUpRight className="link-icon" size={14} /></a></li>
              </ul>
           </div>
           <div className="footer-nav">
@@ -90,9 +91,22 @@ const Footer: React.FC = () => {
           font-size: 14px;
           font-weight: 600;
           opacity: 0.8;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          transition: var(--transition-smooth);
         }
-        .footer-nav ul li a:hover {
+        .social-links li a .link-icon {
+          opacity: 0;
+          transform: translate(-5px, 5px);
+          transition: all 0.3s ease;
+        }
+        .social-links li a:hover {
           opacity: 1;
+        }
+        .social-links li a:hover .link-icon {
+          opacity: 1;
+          transform: translate(0, 0);
         }
         .footer-bottom {
           padding: 30px 0;
