@@ -1,37 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+const testimonialsData = [
+  {
+    num: "01",
+    quote: "PROFESSIONAL, CREATIVE, AND SO EASY TO WORK WITH. THE RESULTS EXCEEDED ALL OUR EXPECTATIONS.",
+    author: "SARAH K",
+    image: "/assets/glitch_3.png"
+  },
+  {
+    num: "02",
+    quote: "ANTON HAS AN INCREDIBLE EYE FOR DETAIL. EVERY SHOT FEELS LIKE A PIECE OF ART. TRULY REMARKABLE WORK.",
+    author: "MICHAEL T",
+    image: "/assets/testimony2.jpg"
+  },
+  {
+    num: "03",
+    quote: "THE BEST PHOTOGRAPHY EXPERIENCE WE'VE EVER HAD. KIND, PATIENT, AND EXTREMELY TALENTED.",
+    author: "EMMA L",
+    image: "/assets/testimony1.jpg"
+  }
+];
 
 const Testimonials: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonialsData.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length);
+  };
+
+  const current = testimonialsData[currentIndex];
+
   return (
     <section className="testimonials reveal-on-scroll">
       <div className="container testimonials-container">
         <div className="testimonials-left">
-          <h2 className="testimonial-header">REAL WORDS <br/> FROM REAL <br/> SOULS</h2>
+          <h2 className="testimonial-header">REAL WORDS <br /> FROM REAL <br /> SOULS</h2>
           <div className="testimonial-img-wrapper">
-             <img src="/assets/glitch_3.png" alt="Client" />
+            <img key={current.image} src={current.image} alt="Client" className="fade-in" />
           </div>
         </div>
-        
+
         <div className="testimonials-right">
           <div className="testimonial-meta">
-            <span className="current-num">01</span> <span className="total-num">from 23</span>
+            <span className="current-num">{current.num}</span> <span className="total-num">from {String(testimonialsData.length).padStart(2, '0')}</span>
           </div>
-          
+
           <div className="testimonial-quote">
-            <p>" PROFESSIONAL, CREATIVE, AND SO EASY TO WORK WITH. THE RESULTS EXCEEDED ALL OUR EXPECTATIONS. "</p>
+            <p key={current.quote} className="fade-in">" {current.quote} "</p>
           </div>
-          
+
           <div className="testimonial-author-wrapper">
-            <span className="author-label">[ SARAH K ]</span>
+            <span key={current.author} className="author-label fade-in">[ {current.author} ]</span>
           </div>
         </div>
 
         <div className="testimonials-nav">
-          <button className="nav-btn prev">
+          <button className="nav-btn prev" onClick={prevTestimonial}>
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M19 12H5m7-7l-7 7 7 7" />
             </svg>
           </button>
-          <button className="nav-btn next">
+          <button className="nav-btn next" onClick={nextTestimonial}>
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M5 12h14m-7-7l7 7-7 7" />
             </svg>
@@ -39,6 +72,13 @@ const Testimonials: React.FC = () => {
         </div>
       </div>
       <style>{`
+        .fade-in {
+          animation: fadeIn 0.8s ease forwards;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         .testimonials {
           background-color: var(--pitch-black);
           color: var(--pure-white);

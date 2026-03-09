@@ -2,7 +2,7 @@ import React from 'react';
 
 const CTA: React.FC = () => {
   return (
-    <section className="cta" style={{ backgroundImage: "url('/assets/cta_bg.png')" }}>
+    <section className="cta" style={{ backgroundImage: "url('/assets/cta.jpg')" }}>
       <div className="cta-overlay"></div>
       <div className="cta-content">
         <h2 className="cta-title">LET'S CAPTURE SOMETHING REAL.</h2>
