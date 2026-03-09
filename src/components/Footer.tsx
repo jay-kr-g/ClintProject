@@ -1,0 +1,119 @@
+import React from 'react';
+
+const Footer: React.FC = () => {
+  return (
+    <footer id="contact" className="footer">
+      <div className="footer-top">
+        <div className="container footer-contact-bar">
+          <div className="footer-label">(CONNECT)</div>
+          <div className="footer-email">HI@ANTONPHOTO.COM</div>
+          <div className="footer-lang-icon">🌐</div>
+        </div>
+      </div>
+      <div className="footer-main">
+        <div className="container footer-grid">
+          <div className="footer-brand">
+            <div className="footer-logo">ANTON<br />PHOTO</div>
+            <p>ESTABLISHED IN 2022 BY ANTON PHILIP JUNIOR PHOTOGRAPHER</p>
+          </div>
+          <div className="footer-nav">
+             <h4>FOLLOW</h4>
+             <ul>
+               <li><a href="#">TWITTER</a></li>
+               <li><a href="#">INSTAGRAM</a></li>
+               <li><a href="#">FACEBOOK</a></li>
+               <li><a href="#">DRIBBBLE</a></li>
+               <li><a href="#">BEHANCE</a></li>
+             </ul>
+          </div>
+          <div className="footer-nav">
+             <h4>NAVIGATION</h4>
+             <ul>
+               <li><a href="#">HOME</a></li>
+               <li><a href="#">PORTFOLIO</a></li>
+               <li><a href="#">SERVICES</a></li>
+               <li><a href="#">JOURNAL</a></li>
+               <li><a href="#">CONTACT</a></li>
+             </ul>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <div className="container">
+          <p>© 2025 ANTON PHOTO. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+      <style>{`
+        .footer {
+          background-color: var(--pitch-black);
+          color: var(--pure-white);
+          padding-top: 60px;
+        }
+        .footer-contact-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 40px 0;
+          border-top: 1px solid #222;
+          border-bottom: 1px solid #222;
+        }
+        .footer-email {
+          font-size: clamp(30px, 8vw, 80px);
+          font-family: var(--font-primary);
+          font-weight: 900;
+        }
+        .footer-label {
+          font-size: 11px;
+          opacity: 0.6;
+        }
+        .footer-main {
+          padding: 60px 0;
+        }
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr;
+          gap: 40px;
+        }
+        .footer-logo {
+          font-size: 40px;
+          font-weight: 900;
+          line-height: 0.9;
+          margin-bottom: 20px;
+        }
+        .footer-brand p {
+          font-size: 11px;
+          max-width: 250px;
+          opacity: 0.6;
+        }
+        .footer-nav h4 {
+          font-size: 12px;
+          margin-bottom: 20px;
+          opacity: 0.5;
+        }
+        .footer-nav ul li {
+          margin-bottom: 10px;
+        }
+        .footer-nav ul li a {
+          font-size: 14px;
+          font-weight: 600;
+          opacity: 0.8;
+        }
+        .footer-nav ul li a:hover {
+          opacity: 1;
+        }
+        .footer-bottom {
+          padding: 30px 0;
+          border-top: 1px solid #222;
+          font-size: 11px;
+          opacity: 0.4;
+          text-align: center;
+        }
+        @media (max-width: 768px) {
+          .footer-grid { grid-template-columns: 1fr; }
+        }
+      `}</style>
+    </footer>
+  );
+};
+
+export default Footer;
